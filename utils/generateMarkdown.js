@@ -14,29 +14,41 @@ function renderLicenseSection(license) {}
 function generateMarkdown(data) {
   return `# ${data.title}
 
-## Description
+  ## Description
 
 ${data.description}
 
-## Installtaion Instructions
+  ## Table of Contents
+  * [Installation](#Installation)
+  * [Usage](#Usage)
+  * [Contributing](#Contributing)
+  * [Testing](#Testing)
+  * [Questions](#Questions)
+
+## Installtaion
+
+To install all necessary dependencies, use the following command:
 
 ${data.install}
 
-## Usage Direction
+## Usage
+
+To use the appplication, use the following command: 
 
 ${data.usage}
 
-## Contributing Info
+## Contributing
+To contribute please ${data.contrib}
 
-${data.contrib}
+## Testing
 
-## Testing Info
+To test the application, use the following command:
 
-${data.testing}
+${data.test}
 
 ## Questions
 
-${data.contact}
+For any questions regarding the repo or application, please contact me at ${data.email}. I do have additional projects on display at https://github.com/${data.github}/.
 `;
 }
 

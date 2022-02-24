@@ -5,7 +5,7 @@ const mkdn = require('./utils/generateMarkdown.js');
 
 
 // TODO: Create an array of questions for user input
-const questions = ['What is the title of your application?', 'What is a description of your application?', 'What are the installation instructions?', 'What are the usage directions?', 'Who contributed to this application?', 'What testing information would you like to list?', 'What is your contact information for questions regarding this application?'];
+const questions = ['What is the title of your application?', 'What is a description of your application?', 'What command should be run to install all necessary dependencies?', 'What command should be run to test the application?', 'How to contribute? "To contibute please..."', 'What does the user need to know to use the appplication/repo?', 'What is your email?', 'What is your GitHub username?'];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
@@ -35,7 +35,7 @@ function init() {
       {
         type: 'input',
         message: `${questions[3]}`,
-        name: 'usage',
+        name: 'test',
       },
       {
         type: 'input',
@@ -45,12 +45,17 @@ function init() {
       {
         type: 'input',
         message: `${questions[5]}`,
-        name: 'testing',
+        name: 'usage',
       },
       {
         type: 'input',
         message: `${questions[6]}`,
-        name: 'contact',
+        name: 'email',
+      },
+      {
+        type: 'input',
+        message: `${questions[7]}`,
+        name: 'github',
       },
     ])
     .then(function (response) {
@@ -58,8 +63,6 @@ function init() {
         const userInput = response;
         let retMarkDown = mkdn.generateMarkdown(userInput);
         writeToFile('README.md', retMarkDown);
-        
-
     })
 }
 
