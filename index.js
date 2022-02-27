@@ -31,21 +31,25 @@ function init() {
         type: 'input',
         message: `${questions[2]}`,
         name: 'install',
+        default: 'npm i',
       },
       {
         type: 'input',
         message: `${questions[3]}`,
         name: 'test',
+        default: 'npm test',
       },
       {
         type: 'input',
         message: `${questions[4]}`,
         name: 'contrib',
+        default: 'contact me at the email below.'
       },
       {
         type: 'input',
         message: `${questions[5]}`,
         name: 'usage',
+        default: 'npm run',
       },
       {
         type: 'input',
@@ -57,12 +61,16 @@ function init() {
         message: `${questions[7]}`,
         name: 'github',
       },
+      {
+        type: 'list',
+        message: 'Which License would you like to apply?',
+        name: 'license',
+        choices: ['Apache', 'Academic', 'GNU', 'ISC', 'MIT', 'Mozilla', 'Open'],
+      }
     ])
     .then(function (response) {
-        console.log(response);
-        const userInput = response;
-        let retMarkDown = mkdn.generateMarkdown(userInput);
-        writeToFile('README.md', retMarkDown);
+        let retMarkDown = mkdn.generateMarkdown(response);
+        writeToFile('./outputs/README.md', retMarkDown);
     })
 }
 

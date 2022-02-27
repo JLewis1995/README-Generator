@@ -1,41 +1,40 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {}
-
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
-
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
+
+  ![badge](https://img.shields.io/badge/license-${data.license}-brightgreen)
 
   ## Description
 
 ${data.description}
 
   ## Table of Contents
-  * [Installation](#Installation)
-  * [Usage](#Usage)
-  * [Contributing](#Contributing)
-  * [Testing](#Testing)
-  * [Questions](#Questions)
+  * [Install](#install)
+  * [Usage](#usage)
+  * [License](#license)
+  * [Contributing](#contributing)
+  * [Testing](#testing)
+  * [Questions](#questions)
 
-## Installtaion
+## Install
 
 To install all necessary dependencies, use the following command:
 
+~~~
 ${data.install}
+~~~
 
 ## Usage
 
 To use the appplication, use the following command: 
 
+~~~
 ${data.usage}
+~~~
+
+## License
+
+This project is under the ${data.license} license!
 
 ## Contributing
 To contribute please ${data.contrib}
@@ -44,7 +43,9 @@ To contribute please ${data.contrib}
 
 To test the application, use the following command:
 
+~~~
 ${data.test}
+~~~
 
 ## Questions
 
