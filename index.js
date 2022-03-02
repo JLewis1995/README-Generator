@@ -49,7 +49,7 @@ function init() {
         type: 'input',
         message: `${questions[5]}`,
         name: 'usage',
-        default: 'npm run',
+        default: 'npm start',
       },
       {
         type: 'input',
